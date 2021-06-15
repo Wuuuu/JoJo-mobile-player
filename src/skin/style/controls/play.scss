@@ -1,0 +1,87 @@
+.xgplayer-skin-default {
+  .xgplayer-play, .xgplayer-play-img {
+    width: 46px;
+    position: relative;
+    order: 0;
+    display: block;
+    cursor: pointer;
+    margin-left: 10px;
+    .xgplayer-icon {
+      margin-top: 8px;
+      width: 46px;
+      div {
+        position: absolute;
+      }
+      .xgplayer-icon-play {
+        display: block;
+        width: 100%;
+        & > img {
+          width: 100%;
+        }
+      }
+      .xgplayer-icon-pause {
+        display: none;
+      }
+    }
+    .xgplayer-tips {
+      .xgplayer-tip-play {
+        display: block;
+      }
+      .xgplayer-tip-pause {
+        display: none;
+      }
+    }
+    &:hover {
+      opacity: 0.85;
+      .xgplayer-tips {
+        display: block;
+      }
+    }
+  }
+}
+
+.xgplayer-skin-default.xgplayer-playing {
+  .xgplayer-play, .xgplayer-play-img {
+    .xgplayer-icon {
+      .xgplayer-icon-play {
+        display: none;
+      }
+      .xgplayer-icon-pause {
+        display: block;
+        width: 100%;
+        & > img {
+          width: 100%;
+        }
+      }
+    }
+    .xgplayer-tips {
+      .xgplayer-tip-play {
+        display: none;
+      }
+      .xgplayer-tip-pause {
+        display: block;
+      }
+    }
+  }
+}
+
+.xgplayer-skin-default.xgplayer-pause {
+  .xgplayer-play, .xgplayer-play-img {
+    .xgplayer-icon {
+      .xgplayer-icon-play {
+        display: block;
+      }
+      .xgplayer-icon-pause {
+        display: none;
+      }
+    }
+    .xgplayer-tips {
+      .xgplayer-tip-play {
+        display: block;
+      }
+      .xgplayer-tip-pause {
+        display: none;
+      }
+    }
+  }
+}
