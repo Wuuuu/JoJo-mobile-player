@@ -1,6 +1,6 @@
 import { createDom, createImgBtn } from '../../utils/util'
-import RequestFullIcon from '../assets/requestFull.svg'
-import ExitFullIcon from '../assets/exitFull.svg'
+import RequestFullIcon from '../assets/requestFull.png'
+import ExitFullIcon from '../assets/exitFull.png'
 import '../style/controls/fullscreen.scss'
 
 let s_fullscreen = function () {
@@ -11,8 +11,8 @@ let s_fullscreen = function () {
     btn = createImgBtn('fullscreen', fullscreenBtn.url.request, fullscreenBtn.width, fullscreenBtn.height)
   } else {
     btn = createDom('xg-fullscreen', `<xg-icon class="xgplayer-icon">
-                                             <div class="xgplayer-icon-requestfull">${RequestFullIcon}</div>
-                                             <div class="xgplayer-icon-exitfull">${ExitFullIcon}</div>
+                                             <div class="xgplayer-icon-requestfull"><img src=${RequestFullIcon} alt=''/></div>
+                                             <div class="xgplayer-icon-exitfull"><img src=${ExitFullIcon} alt=''/></div>
                                            </xg-icon>`, {}, 'xgplayer-fullscreen')
   }
 

@@ -1,4 +1,3 @@
-import {version} from '../version.json'
 const ErrorTypes = {
   network: {
     code: 1,
@@ -44,10 +43,10 @@ const ErrorTypes = {
 
 class Errors {
   constructor (type, currentTime, duration, networkState, readyState, src, currentSrc,
-    ended, errd = {line: '', handle: '', msg: '', version: ''}, errorCode, mediaError) {
+    ended, errd = {line: '', handle: '', msg: '', version: '1.1.1'}, errorCode, mediaError) {
     let r = {}
     if (arguments.length > 1) {
-      r.playerVersion = version // 播放器版本
+      r.playerVersion = '1.1.1' // 播放器版本
       r.errorType = type
       r.domain = document.domain // domain
       r.duration = duration // 视频时长

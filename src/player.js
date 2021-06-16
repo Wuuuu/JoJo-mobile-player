@@ -7,9 +7,9 @@ import allOff from 'event-emitter/all-off'
 import s_i18n from './skin/controls/i18n.js'
 import './skin/style/index.scss'
 
-import {
-  version
-} from '../version.json'
+// import {
+//   version
+// } from '../version.json'
 class Player extends Proxy {
   constructor (options) {
     super(options)
@@ -24,7 +24,7 @@ class Player extends Proxy {
       controls: true,
       controlsList: ['nodownload']
     }, options)
-    this.version = version
+    this.version = '1.1.1'
     this.userTimer = null
     this.waitTimer = null
     this.history = []

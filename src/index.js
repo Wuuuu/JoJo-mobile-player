@@ -3,7 +3,7 @@ import Player from './player'
 import Airplay from './controls/airplay.js'
 import CssFullscreen from './controls/cssFullscreen.js'
 import Danmu from './controls/danmu.js'
-import Definition from './controls/definition.js'
+// import Definition from './controls/definition.js'
 import Download from './controls/download.js'
 import ErrorRetryControl from './controls/errorRetry.js'
 import Fullscreen from './controls/fullscreen.js'
@@ -22,12 +22,13 @@ import Rotate from './controls/rotate.js'
 import ScreenShot from './controls/screenShot.js'
 import Start from './controls/start.js'
 import Volume from './controls/volume.js'
+import './skin/index.js';
 
 Player.installAll([
     Airplay,
     CssFullscreen,
     Danmu,
-    Definition,
+    // Definition,
     Download,
     ErrorRetryControl,
     Fullscreen,
@@ -48,6 +49,5 @@ Player.installAll([
     Volume,    
 ])
 
-import './skin/index.js';
 
 export default Player

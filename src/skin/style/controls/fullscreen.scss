@@ -13,6 +13,9 @@
       }
       .xgplayer-icon-requestfull {
         display: block;
+        & > img {
+          width: 100%;
+        }
       }
       .xgplayer-icon-exitfull {
         display: none;
@@ -46,6 +49,9 @@
       }
       .xgplayer-icon-exitfull {
         display: block;
+        & > img {
+          width: 100%;
+        }
       }
     }
     .xgplayer-tips {

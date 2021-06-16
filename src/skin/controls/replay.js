@@ -36,7 +36,7 @@ let s_replay = function () {
   let svg = btn.querySelector('svg');
 
   ['click', 'touchend'].forEach(item => {
-    svg.addEventListener(item, function (e) {
+    svg?.addEventListener(item, function (e) {
       e.preventDefault()
       e.stopPropagation()
       player.userGestureTrigEvent('replayBtnClick')

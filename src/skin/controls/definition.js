@@ -163,6 +163,7 @@ let s_definition = function () {
             curRUL = player['hls'].url
           }
           if (a.href !== player.currentSrc) {
+            // eslint-disable-next-line no-unused-expressions
             player.curTime = player.currentTime, paused = player.paused
             if (!player.ended) {
               player.src = a.href

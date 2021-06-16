@@ -2,18 +2,18 @@
   .xgplayer-start {
     border-radius: 50%;
     display: inline-block;
-    width: 16vw;
-    height: 16vw;
-    background: rgba(0, 0, 0, 0.38);
+    width: 22vw;
+    height: 22vw;
+    // background: rgba(0, 0, 0, 0.38);
     overflow: hidden;
     text-align: center;
-    line-height: 16vw;
+    line-height: 22vw;
     vertical-align: middle;
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 115;
-    margin: -8vw auto auto -8vw;
+    margin: -11vw auto auto -11vw;
     cursor: pointer;
     div{
       position: absolute;
@@ -30,9 +30,9 @@
     .xgplayer-icon-pause{
       display: none;
     }
-    &:hover{
-      opacity: 0.85;
-    }
+    // &:hover{
+    //   opacity: 0.85;
+    // }
   }
 }
 

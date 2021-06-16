@@ -11,7 +11,7 @@
     z-index: 35;
   }
   .xgplayer-progress-outer {
-    background: rgba(255, 255, 255, 0.30);
+    background: #fff;
     display: block;
     height: 3px;
     line-height: 3px;
@@ -35,7 +35,7 @@
   .xgplayer-progress-played {
     display: block;
     width: 0;
-    background-image: linear-gradient(-90deg, #FA1F41 0%, #E31106 100%);
+    background-image: linear-gradient(-90deg, #FFD738 0%, #FFD738 100%);
     border-radius: 0 1.5px 1.5px 0;
   }
   .xgplayer-progress-btn {
