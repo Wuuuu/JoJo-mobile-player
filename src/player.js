@@ -21,6 +21,7 @@ class Player extends Proxy {
       lang: (document.documentElement.getAttribute('lang') || navigator.language || 'zh-cn').toLocaleLowerCase(),
       inactive: 3000,
       volume: 0.6,
+      posterBgi: false,
       controls: true,
       controlsList: ['nodownload']
     }, options)

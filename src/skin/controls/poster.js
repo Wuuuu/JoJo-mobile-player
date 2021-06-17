@@ -10,6 +10,13 @@ let s_poster = function () {
   let poster = createDom('xg-poster', '', {}, 'xgplayer-poster')
   poster.style.backgroundImage = `url(${player.config.poster})`
   root.appendChild(poster)
+  if (player.config.posterBgi) {
+    const posterBgi = createDom('xg-poster-bgi', '', {}, 'xgplayer-poster-bgi');
+    posterBgi.style.backgroundImage = `url(${player.config.poster})`;
+    poster.style.backgroundSize = 'contain';
+
+    root.appendChild(posterBgi);
+  }
 }
 
 export default {

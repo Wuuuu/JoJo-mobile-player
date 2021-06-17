@@ -13,6 +13,7 @@
       }
       .xgplayer-icon-requestfull {
         display: block;
+        padding: 4px;
         & > img {
           width: 100%;
         }
@@ -33,7 +34,7 @@
       }
     }
     &:hover {
-      opacity: 0.85;
+      // opacity: 0.85;
       .xgplayer-tips {
         display: block;
       }

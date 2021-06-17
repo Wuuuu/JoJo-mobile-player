@@ -1,11 +1,11 @@
 import { createDom } from '../../utils/util'
-import Loading from '../assets/loading.svg'
+import Loading from '../assets/loading.png'
 import '../style/controls/loading.scss'
 
 let s_loading = function () {
   let player = this
   let root = player.root
-  let container = createDom('xg-loading', `${Loading}`, {}, 'xgplayer-loading')
+  let container = createDom('xg-loading', `<img src=${Loading} alt=''/>`, {}, 'xgplayer-loading')
   player.once('ready', () => {
     root.appendChild(container)
   })

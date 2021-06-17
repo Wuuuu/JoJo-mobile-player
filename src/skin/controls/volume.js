@@ -1,15 +1,15 @@
 import { createDom } from '../../utils/util'
-import MutedIcon from '../assets/volumeMuted.svg'
-import SmallIcon from '../assets/volumeSmall.svg'
-import LargeIcon from '../assets/volumeLarge.svg'
+import MutedIcon from '../assets/volumeMuted.png'
+import SmallIcon from '../assets/volumeSmall.png'
+import LargeIcon from '../assets/volumeLarge.png'
 import '../style/controls/volume.scss'
 
 let s_volume = function () {
   let player = this
   let container = createDom('xg-volume', `<xg-icon class="xgplayer-icon">
-                                         <div class="xgplayer-icon-large">${LargeIcon}</div>
-                                         <div class="xgplayer-icon-small">${SmallIcon}</div>
-                                         <div class="xgplayer-icon-muted">${MutedIcon}</div>
+                                         <div class="xgplayer-icon-large"><img src=${LargeIcon} alt=''/></div>
+                                         <div class="xgplayer-icon-small"><img src=${SmallIcon} alt=''/></div>
+                                         <div class="xgplayer-icon-muted"><img src=${MutedIcon} alt=''/></div>
                                        </xg-icon>
                                        <xg-slider class="xgplayer-slider" tabindex="2">
                                          <xg-bar class="xgplayer-bar">

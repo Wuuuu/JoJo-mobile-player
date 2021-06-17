@@ -1,5 +1,5 @@
 import { createDom } from '../../utils/util'
-import ReplayIcon from '../assets/replay.svg'
+import ReplayIcon from '../assets/replay.png'
 import '../style/controls/replay.scss'
 
 let s_replay = function () {
@@ -7,7 +7,7 @@ let s_replay = function () {
   let root = player.root
 
   let replayText = player.lang.REPLAY
-  let btn = createDom('xg-replay', `${ReplayIcon}
+  let btn = createDom('xg-replay', `<img src=${ReplayIcon} alt=''/>
                                          <xg-replay-txt class="xgplayer-replay-txt">${replayText}</xg-replay-txt>
                                         `, {}, 'xgplayer-replay')
   player.once('ready', () => {
@@ -33,10 +33,10 @@ let s_replay = function () {
   }
   btn.addEventListener('click', onBtnClick)
 
-  let svg = btn.querySelector('svg');
+  let img = btn.querySelector('img');
 
   ['click', 'touchend'].forEach(item => {
-    svg?.addEventListener(item, function (e) {
+    img.addEventListener(item, function (e) {
       e.preventDefault()
       e.stopPropagation()
       player.userGestureTrigEvent('replayBtnClick')
