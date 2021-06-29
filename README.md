@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
     <img src="https://raw.githubusercontent.com/bytedance/xgplayer/master/xgplayer.png" width="384" height="96">
 </div>
 <div align="center">
@@ -20,17 +20,17 @@
 ### Introduction
 
 xgplayer is a web video player library. it has designed a separate, detachable UI component based on the principle that everything is componentized. More importantly, it is not only flexible in the UI layer, but also bold in its functionality: it gets rid of video loading, buffering, and format support for video dependence. Especially on mp4
-it can be staged loading for that does not support streaming mp4. This means seamless switching with clarity, load control, and video savings. It also integrates on-demand and live support for FLV, HLS, and dash. [Document](http://h5player.bytedance.com/)
+it can be staged loading for that does not support streaming mp4. This means seamless switching with clarity, load control, and video savings. It also integrates on-demand and live support for FLV, HLS, and dash. [Document](http://h5player.bytedance.com/) -->
 
-### Start
+### 开始
 
-1. Install
+1. 下载
 
     ```
-    $ npm install xgplayer
+    $ npm i jojo-mobile-player
     ```
 
-2. Usage
+2. 使用
 
     Step 1:
 
@@ -40,7 +40,7 @@ it can be staged loading for that does not support streaming mp4. This means sea
     Step 2:
 
     ```js
-    import Player from 'xgplayer';
+    import Player from 'jojo-mobile-player';
 
     const player = new Player({
         id: 'vs',
@@ -48,11 +48,11 @@ it can be staged loading for that does not support streaming mp4. This means sea
     })
     ```
 
-    This is the easiest way to configure the player,then it runs with video. For more advanced content, see the plug-in section or documentation. [more config](http://h5player.bytedance.com/config.html)
+    这是配置播放器最简单的方法，然后它运行视频。有关更高级的内容，请参见插件部分或文档。 [更多的配置](http://h5player.bytedance.com/config.html)
 
 
 
-
+<!-- 
 ### Plugins
 
 xgplayer provides more plugins, plugins are divided into two categories: one is self-starting, and another inherits the player's core class named xgplayer. In principle, the officially provided plug-ins are self-starting and the packaged third-party libraries are inherited. Some feature plug-ins themselves can provide a downgrade scenario that suggests a self-start approach, or an inheritance approach if not. The player supports custom plugins for more content viewing [plugins](http://h5player.bytedance.com/)
@@ -95,4 +95,4 @@ please visit [http://localhost:9090/examples/index.html](http://localhost:9090/e
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](http://opensource.org/licenses/MIT) -->

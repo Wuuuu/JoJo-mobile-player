@@ -1,6 +1,6 @@
 {
     "name": "jojo-mobile-player",
-    "version": "1.1.18",
+    "version": "1.1.20",
     "description": "video player",
     "main": "./dist/index.js",
     "typings": "./types/index.d.ts",
@@ -24,7 +24,7 @@
         "type": "git",
         "url": ""
     },
-    "author": "yinguohui@bytedance.com",
+    "author": "greg5wu@gmail.com",
     "license": "MIT",
     "dependencies": {
         "chalk": "^2.3.2",
