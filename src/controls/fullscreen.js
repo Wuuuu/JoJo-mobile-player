@@ -1,12 +1,12 @@
-import { hasClass, addClass, removeClass } from '../utils/util'
+import { hasClass, addClass, removeClass, PresentationMode, checkWebkitSetPresentationMode } from '../utils/util'
 
 let fullscreen = function () {
   let player = this
   let root = player.root
 
   function onFullscreenBtnClick () {
-    if(player.config.rotateFullscreen) {
-      if(hasClass(root, 'xgplayer-rotate-fullscreen')) {
+    if (player.config.rotateFullscreen) {
+      if (hasClass(root, 'xgplayer-rotate-fullscreen')) {
         player.exitRotateFullscreen()
       } else {
         player.getRotateFullscreen()
@@ -30,7 +30,7 @@ let fullscreen = function () {
       removeClass(root, 'xgplayer-is-fullscreen')
       player.emit('exitFullscreen')
     }
-    if(player.danmu && typeof player.danmu.resize === 'function') {
+    if (player.danmu && typeof player.danmu.resize === 'function') {
       player.danmu.resize()
     }
   };
@@ -38,21 +38,37 @@ let fullscreen = function () {
     document.addEventListener(item, onFullscreenChange)
   })
 
-  player.video.addEventListener("webkitbeginfullscreen", function(){
+  player.video.addEventListener('webkitbeginfullscreen', function () {
     addClass(root, 'xgplayer-is-fullscreen')
     player.emit('requestFullscreen')
   })
 
-  player.video.addEventListener("webkitendfullscreen", function(){
+  player.video.addEventListener('webkitendfullscreen', function () {
     removeClass(root, 'xgplayer-is-fullscreen')
     player.emit('exitFullscreen')
   })
+
+  function onWebkitpresentationmodechanged (e) {
+    const mode = player.video.webkitPresentationMode
+    // 非全屏模式 退出全屏
+    if (mode !== PresentationMode.FULLSCREEN) {
+      removeClass(root, 'xgplayer-is-fullscreen')
+      player.emit('exitFullscreen')
+    }
+  }
+
+  checkWebkitSetPresentationMode(player.video) &&
+  player.video.addEventListener('webkitpresentationmodechanged', onWebkitpresentationmodechanged)
 
   function onDestroy () {
     player.off('fullscreenBtnClick', onFullscreenBtnClick);
     ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(item => {
       document.removeEventListener(item, onFullscreenChange)
     })
+
+    checkWebkitSetPresentationMode(player.video) &&
+    player.video.removeEventListener('webkitpresentationmodechanged', onWebkitpresentationmodechanged)
+
     player.off('destroy', onDestroy)
   }
   player.once('destroy', onDestroy)
@@ -96,6 +112,10 @@ let fullscreen = function () {
     let player = this
     document.documentElement.style.width = '100%'
     document.documentElement.style.height = '100%'
+    if (player.config.fluid) {
+      player.root.style['padding-top'] = ''
+      player.root.style['max-width'] = 'unset'
+    }
     if (player.root && !hasClass(player.root, 'xgplayer-rotate-fullscreen')) {
       addClass(player.root, 'xgplayer-rotate-fullscreen')
     }
@@ -106,6 +126,12 @@ let fullscreen = function () {
     let player = this
     document.documentElement.style.width = 'unset'
     document.documentElement.style.height = 'unset'
+    if (player.config.fluid) {
+      player.root.style['width'] = '100%'
+      player.root.style['height'] = '0'
+      player.root.style['padding-top'] = `${player.config.height * 100 / player.config.width}%`
+      player.root.style['max-width'] = '100%'
+    }
     if (player.root && hasClass(player.root, 'xgplayer-rotate-fullscreen')) {
       removeClass(player.root, 'xgplayer-rotate-fullscreen')
     }
