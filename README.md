@@ -25,5 +25,7 @@
     })
     ```
 
+
+> 这是配置播放器最简单的方法，然后它运行视频。有关更高级的内容，请参见插件部分或文档。 [更多的配置](http://h5player.bytedance.com/config.html)
+
 > 新增posterBgi初始化poster背景模糊参数
-    这是配置播放器最简单的方法，然后它运行视频。有关更高级的内容，请参见插件部分或文档。 [更多的配置](http://h5player.bytedance.com/config.html)
